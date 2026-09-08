@@ -1,0 +1,391 @@
+html {
+  background-color: #A4BBFF;
+  /* px signifie "pixels". La taille de police de base est maintenant de 10
+     pixels de haut */
+  font-size: 10px;
+  /* Remplacez EMPLACEMENT par la valeur de la propriété font-family obtenue
+     depuis Google Fonts */
+  font-family: "Quicksand", sans-serif;;
+}
+
+h1 {
+  margin: 18px 0 4px;
+  padding: 10px 0;
+  color: #25345f;
+  font-size: 3.2rem;
+  text-align: center;
+  text-shadow: 0 2px 0 rgb(255 255 255 / 45%);
+}
+
+#messageBienvenue {
+  margin: 0 0 10px;
+  color: #5269bd;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+body > p {
+  max-width: 720px;
+  margin: 0 auto 18px;
+  color: #303b69;
+  font-size: 1.6rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+p,
+li {
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+body {
+  margin: 10px auto;
+  padding: 0 20px 20px 20px;
+}
+
+.banniereEntete {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 clamp(90px, 12vw, 170px);
+}
+
+.banniereEntete img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  max-height: 300px;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.actionsSession {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: grid;
+  gap: 8px;
+  min-width: 130px;
+}
+
+.actionsSession button {
+  flex: 0 0 auto;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #5269bd;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.actionsSession button[hidden] {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .banniereEntete {
+    padding: 0;
+  }
+
+  .banniereEntete img {
+    min-width: 0;
+  }
+
+  .actionsSession {
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    transform: none;
+  }
+}
+
+dialog {
+  width: min(90vw, 440px);
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  color: #1d2540;
+  box-shadow: 0 24px 70px rgb(25 36 82 / 30%);
+}
+
+dialog::backdrop {
+  background: rgb(20 29 65 / 62%);
+  backdrop-filter: blur(4px);
+}
+
+.popupCarte {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  padding: 32px;
+  background: #fff;
+}
+
+.popupFermer {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #edf1ff;
+  color: #303b69;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.popupEntete h2,
+.popupEntete p {
+  margin: 0;
+}
+
+.popupEntete h2 {
+  font-size: 28px;
+}
+
+.popupEntete p:last-child {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.popupSurTitre {
+  color: #5269bd;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.popupEncart {
+  min-height: 72px;
+  border: 1px dashed #c6d0f4;
+  border-radius: 10px;
+  background: #f7f8ff;
+}
+
+.popupCarte label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.popupCarte input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bbc6eb;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.authMessage {
+  min-height: 18px;
+  margin: 0;
+  color: #a12d4f;
+  font-size: 13px;
+}
+
+.profilChamps {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+}
+
+.photoProfilBloc,
+.profilDetails {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.photoProfilBloc {
+  justify-items: center;
+}
+
+.photoProfilBloc label {
+  text-align: center;
+}
+
+.selectionPhoto {
+  display: grid;
+  grid-template-columns: 24px 80px 24px;
+  align-items: center;
+  gap: 4px;
+  width: 136px;
+}
+
+.selectionPhoto img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #bbc6eb;
+  border-radius: 8px;
+  background: #f7f8ff;
+}
+
+.selectionPhoto button {
+  padding: 4px;
+  border: 0;
+  background: #edf1ff;
+  color: #303b69;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .profilChamps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.popupActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.popupActions button {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #5269bd;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.popupActions button:first-child {
+  background: #edf1ff;
+  color: #303b69;
+}
+
+#proposerActivite {
+  display: block;
+  margin: 8px auto 16px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: #5269bd;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgb(48 59 105 / 20%);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+#proposerActivite:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgb(48 59 105 / 28%);
+}
+
+.activitesSection {
+  width: 100%;
+}
+
+#activiteType,
+#activiteNom,
+#activiteNiveau,
+#activiteDescription {
+  padding: 9px;
+  border: 1px solid #bbc6eb;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.organisateurLien,
+td > button {
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: #edf1ff;
+  color: #303b69;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tableauDefilement {
+  overflow-x: auto;
+  border: 1px solid #bbc6eb;
+  border-radius: 10px;
+  background: #fff;
+}
+
+#tableauActivites {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+#tableauActivites th,
+#tableauActivites td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e5f7;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#tableauActivites th {
+  background: #edf1ff;
+}
+
+#tableauActivites th button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.portraitOrganisateur {
+  width: 28px;
+  height: 28px;
+  margin-right: 6px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.carteMembre {
+  min-width: 260px;
+}
+
+.carteMembre > img {
+  width: 96px;
+  height: 96px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.messageLimiteActivite {
+  min-width: min(80vw, 360px);
+}
+
+.messageLimiteActivite > p {
+  margin: 0;
+}
+
+.messageLimiteActivite > button:last-child {
+  justify-self: end;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #5269bd;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
